@@ -2,6 +2,7 @@
   <el-form :inline="true" :model="cForm" class="demo-form-inline">
     <el-form-item label="一级分类">
       <el-select
+        :disabled="disabled"
         v-model="cForm.category1Id"
         placeholder="选择一级分类"
         @change="handleChange1"
@@ -16,6 +17,7 @@
     </el-form-item>
     <el-form-item label="二级分类">
       <el-select
+        :disabled="disabled"
         v-model="cForm.category2Id"
         placeholder="选择二级分类"
         @change="handleChange2"
@@ -30,6 +32,7 @@
     </el-form-item>
     <el-form-item label="三级分类">
       <el-select
+        :disabled="disabled"
         v-model="cForm.category3Id"
         placeholder="选择三级分类"
         @change="handleChange3"
@@ -50,6 +53,7 @@ export default {
   name: "CategorySelector",
   data() {
     return {
+      disabled: false,
       cForm: {
         category1Id: "",
         category2Id: "",
